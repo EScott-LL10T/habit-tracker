@@ -1,9 +1,9 @@
 import { Button } from "./Button"
 import { eachDayOfInterval, endOfWeek, startOfWeek, format, isFuture } from "date-fns"
 
-type HabitItemProps = {
+export type HabitItemProps = {
     habit: {
-        id: number,
+        id: string,
         name: string
     }
 }
