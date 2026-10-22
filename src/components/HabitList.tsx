@@ -1,7 +1,7 @@
 import { HabitItem } from "./HabitItem";
 
 export function HabitList(){
-    const habits = [{id: 1, name: "Hi"}, {id: 2, name: "Bye"}]
+    const habits = [{id: 1, name: "Hi"}]
     if(habits.length ===0){
         return( 
             <p className = "text-center text-zinc-500 py-12">No habits yet. Add one to get started.</p>
