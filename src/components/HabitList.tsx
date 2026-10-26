@@ -1,14 +1,11 @@
 import { HabitItem } from "./HabitItem"
-import { type Habit } from "../context/HabitProvider"
 import { useHabits} from "../context/useHabits"
 
 export type HabitListProps = {
-    habits: Habit[]
-    deleteHabit: (id: string) => void
-    toggleHabit: (id: string, date: Date) => void
+    visibleDates: Date[]
 }
 
-export function HabitList(){
+export function HabitList({ visibleDates }: HabitListProps){
     const {habits} = useHabits()
     if(habits.length === 0){
         return( 
@@ -17,7 +14,7 @@ export function HabitList(){
     } 
     return (
        <div className = "flex flex-col gap-3">
-            {habits.map(habit => (<HabitItem key = {habit.id} habit = {habit}/>))}
+            {habits.map(habit => (<HabitItem key = {habit.id} habit = {habit} visibleDates = {visibleDates} />))}
        </div>
     )
 }
