@@ -1,11 +1,6 @@
-import {createContext, useContext, useState, type ReactNode} from "react";
+import {useState, type ReactNode} from "react";
 import { isSameDay } from "date-fns";
-type Context = {
-    habits: Habit[]
-    addHabit: (name: string) => void
-    deleteHabit: (id: string) => void
-    toggleHabit: (id: string, date: Date) => void
-}
+import { HabitContext } from "./useHabits";
 
 export type Habit = {
     id: string,
@@ -16,7 +11,6 @@ export type Habit = {
 type HabitProviderProps = {
     children: ReactNode
 }
-export const HabitContext = createContext<null | Context>(null)
 
 export function HabitProvider({children}: HabitProviderProps ) {
     const [habits, setHabits] = useState<Habit[]>([])
@@ -43,12 +37,4 @@ export function HabitProvider({children}: HabitProviderProps ) {
       }
 
     return <HabitContext value = {{habits, addHabit, deleteHabit, toggleHabit}}>{children}</HabitContext>
-}
-
-export function useHabits() {
-    const habitContext = useContext(HabitContext)
-    if (habitContext === null){
-        throw new Error("HabitContext is null")
-    }
-    return habitContext
 }

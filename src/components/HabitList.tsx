@@ -1,6 +1,6 @@
 import { HabitItem } from "./HabitItem"
-import { useHabits, type Habit } from "../context/HabitProvider"
-
+import { type Habit } from "../context/HabitProvider"
+import { useHabits} from "../context/useHabits"
 
 export type HabitListProps = {
     habits: Habit[]
