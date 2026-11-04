@@ -14,7 +14,8 @@ export function HabitList({ visibleDates }: HabitListProps){
     } 
     return (
        <div className = "flex flex-col gap-3">
-            {habits.map(habit => (<HabitItem key = {habit.id} habit = {habit} visibleDates = {visibleDates} />))}
+            {habits.map(
+                habit => (<HabitItem key = {habit.id} habit = {habit} visibleDates = {visibleDates} />))}
        </div>
     )
 }

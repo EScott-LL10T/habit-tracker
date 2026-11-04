@@ -4,6 +4,7 @@ import { HabitList } from "./components/HabitList";
 import { HabitProvider } from "./context/HabitProvider";
 import { addWeeks, eachDayOfInterval, endOfWeek, startOfWeek } from "date-fns";
 import { useState } from "react";
+import { Footer } from "./components/Footer";
 
 
 
@@ -26,6 +27,7 @@ export default function App(){
       <HabitForm />
       <HabitList visibleDates={visibleDates} />
       </HabitProvider>
+      <Footer />
   </div>
   )
 }
