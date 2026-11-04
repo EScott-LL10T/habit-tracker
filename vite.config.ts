@@ -10,4 +10,6 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     tailwindcss(),
   ],
+  // Set the base path for git hub pages deployment
+  base: "/habit-tracker",
 })
